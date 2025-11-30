@@ -5,6 +5,9 @@
 import "./src/env.js";
 
 /** @type {import("next").NextConfig} */
-const config = {};
+const config = {
+  // Application runs on port 5656
+  // Port configuration is handled via command line flags in package.json scripts
+};
 
 export default config;
