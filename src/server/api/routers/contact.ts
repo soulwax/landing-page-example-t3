@@ -22,10 +22,17 @@ export const contactRouter = createTRPCRouter({
         message: input.message,
       }).returning();
 
+      // Verify that the insert actually returned a row
+      if (!result[0]) {
+        throw new Error("Failed to create contact request");
+      }
+
+      const insertedRecord = result[0];
+
       // TODO: Send email notification to business owner
       // For demo purposes, log to console
       console.log("New contact request received:", {
-        id: result[0]?.id,
+        id: insertedRecord.id,
         name: input.name,
         email: input.email,
         serviceType: input.serviceType,
@@ -33,7 +40,7 @@ export const contactRouter = createTRPCRouter({
 
       return {
         success: true,
-        id: result[0]?.id,
+        id: insertedRecord.id,
       };
     }),
 });
