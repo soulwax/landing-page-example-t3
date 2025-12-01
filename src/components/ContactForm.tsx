@@ -36,10 +36,6 @@ export function ContactForm() {
     }
   };
 
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
-
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}

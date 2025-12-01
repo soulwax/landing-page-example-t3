@@ -17,7 +17,7 @@
     "lint:fix": "next lint --fix",
     "pm2:logs": "pm2 logs services-landing",
     "pm2:restart": "pm2 restart services-landing",
-    "pm2:start": "pm2 start ecosystem.config.js",
+    "pm2:start": "pm2 start ecosystem.config.cjs",
     "pm2:stop": "pm2 stop services-landing",
     "preview": "next build && next start -p 5656",
     "start": "next start -p 5656",
